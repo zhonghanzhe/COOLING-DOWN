@@ -197,8 +197,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   gap: clamp(2.5rem, 6vw, 5rem);
 }
 .card { transition: opacity .2s ease; }
-.card.place-left-lg  { width: 60%; }                        /* left, largest */
-.card.place-right-md { width: 46%; margin-left: auto; }     /* right, smaller */
+.card.place-left-lg  { width: 72%; }                        /* left, largest */
+.card.place-right-md { width: 54%; margin-left: auto; }     /* right, smaller */
 .card.place-left-sm  { width: 40%; margin-left: 8%; }
 .card.place-right-sm { width: 36%; margin-left: auto; margin-right: 6%; }
 .card:hover { opacity: .82; }
