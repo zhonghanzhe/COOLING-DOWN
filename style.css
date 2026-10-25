@@ -88,8 +88,8 @@ ul { padding: 0; margin: 0; list-style: none; }
 .wordmark-name { display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap; }
 .wordmark-contact {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: .15rem;
   font-size: .72rem;
   letter-spacing: .03em;
   color: var(--text-dim);
