@@ -113,14 +113,6 @@ ul { padding: 0; margin: 0; list-style: none; }
 .bracket-nav a.current { color: var(--text); }
 .bracket-nav a.current::before { content: "[x] "; color: var(--text); }
 
-.masthead-gh {
-  font-size: .78rem;
-  letter-spacing: .04em;
-  color: var(--text-dim);
-  transition: color .2s;
-}
-.masthead-gh:hover { color: var(--text); }
-
 /* =========================================================
    Sections (shared)
    ========================================================= */
