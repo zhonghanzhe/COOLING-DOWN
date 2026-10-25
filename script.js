@@ -1,24 +1,27 @@
 // ---- Footer year ----
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ---- Nav mobile toggle ----
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.querySelector('.nav-links');
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// ---- Nav background on scroll ----
+// ---- Masthead row background on scroll ----
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 10);
 });
 
+// ---- Bracket nav: highlight current section ----
+const bracketLinks = document.querySelectorAll('.bracket-nav a');
+const navSections = document.querySelectorAll('.section[id]');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    bracketLinks.forEach(link => {
+      link.classList.toggle('current', link.dataset.section === entry.target.id);
+    });
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+navSections.forEach(section => navObserver.observe(section));
+
 // ---- Scroll reveal ----
-const revealTargets = document.querySelectorAll('.section, .hero-content');
+const revealTargets = document.querySelectorAll('.section');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
