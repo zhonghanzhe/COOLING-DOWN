@@ -3,8 +3,16 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // ---- Masthead row background on scroll ----
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
+const backToTop = document.getElementById('backToTop');
+const onScroll = () => {
   nav.classList.toggle('scrolled', window.scrollY > 10);
+  backToTop.hidden = window.scrollY < 400;
+};
+window.addEventListener('scroll', onScroll);
+onScroll();
+backToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ---- Bracket nav: highlight current section ----
@@ -35,7 +43,7 @@ revealTargets.forEach(el => revealObserver.observe(el));
 // ---- Work filter ----
 const filterBar = document.getElementById('filterBar');
 const cards = document.querySelectorAll('.card');
-filterBar.addEventListener('click', (e) => {
+filterBar?.addEventListener('click', (e) => {
   const btn = e.target.closest('.filter-btn');
   if (!btn) return;
   filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
