@@ -86,9 +86,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .wordmark-block { display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap; }
 .wordmark {
-  font-weight: 700;
+  font-weight: 300;
   font-size: clamp(1.3rem, 3.4vw, 1.9rem);
-  letter-spacing: -.01em;
+  letter-spacing: .01em;
 }
 .wordmark-sub {
   font-size: .72rem;
