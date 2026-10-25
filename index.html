@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>钟涵哲 Gabrielle Zhong — Portfolio</title>
+<meta name="description" content="钟涵哲 Gabrielle Zhong 的个人作品集 — 计算艺术 / 互动媒体 / 视觉创作">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav-logo">GZ<span class="dot">.</span></a>
+  <nav class="nav-links">
+    <a href="#about">关于</a>
+    <a href="#work">作品</a>
+    <a href="#skills">技能</a>
+    <a href="#contact">联系</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Computational Arts · 互动媒体 · 视觉创作</p>
+    <h1>你好，我是<span class="accent">钟涵哲 Gabrielle</span></h1>
+    <p class="hero-sub">
+      Goldsmiths, University of London · Computational Arts MA。
+      专注于实时视觉与互动装置创作，使用 TouchDesigner、Blender 与代码
+      构建沉浸式的影像与声音体验。
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">查看作品</a>
+      <a href="#contact" class="btn btn-ghost">联系我</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about" id="about">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2>关于我</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        我是钟涵哲（Gabrielle），目前在 Goldsmiths, University of London
+        就读 Computational Arts 硕士（MA）。我的创作围绕实时视觉、互动装置
+        与沉浸式体验展开，常用 TouchDesigner 搭建手势 / 感应驱动的互动系统，
+        并结合 Blender 三维渲染与声音设计扩展作品的空间感。
+      </p>
+      <p>
+        （在这里可以继续补充：具体研究方向、参展 / 演出经历、过往项目背景等。）
+      </p>
+    </div>
+    <ul class="about-facts">
+      <li><strong>方向</strong><span>Computational Arts / 互动媒体</span></li>
+      <li><strong>工具</strong><span>TouchDesigner, Blender, Ableton Live</span></li>
+      <li><strong>院校</strong><span>Goldsmiths, University of London</span></li>
+      <li><strong>状态</strong><span>欢迎合作交流（按需修改）</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== WORK ===== -->
+<section class="section work" id="work">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2>作品</h2>
+  </div>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="visual">视觉 / 装置</button>
+    <button class="filter-btn" data-filter="dev">开发</button>
+  </div>
+
+  <div class="grid" id="workGrid">
+
+    <article class="card" data-category="visual">
+      <div class="card-media placeholder-media">
+        <!-- 替换为你的图片或视频:
+             <img src="assets/projects/project1.jpg" alt="项目1 截图"> -->
+        <span class="placeholder-label">封面图 / 视频</span>
+      </div>
+      <div class="card-body">
+        <h3>项目名称一</h3>
+        <p>一句话描述这个作品 — 用了什么技术、解决了什么问题，或它的核心创意。</p>
+        <div class="card-tags"><span>TouchDesigner</span><span>Interactive</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-category="visual">
+      <div class="card-media placeholder-media">
+        <span class="placeholder-label">封面图 / 视频</span>
+      </div>
+      <div class="card-body">
+        <h3>项目名称二</h3>
+        <p>简短描述。可以链接到视频演示、Vimeo / B站 链接，或项目详情页。</p>
+        <div class="card-tags"><span>Blender</span><span>Render</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-category="dev">
+      <div class="card-media placeholder-media">
+        <span class="placeholder-label">封面图 / 截图</span>
+      </div>
+      <div class="card-body">
+        <h3>项目名称三</h3>
+        <p>简短描述开发项目的内容、技术栈，以及你负责的部分。</p>
+        <div class="card-tags"><span>Web</span><span>Python</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-category="dev">
+      <div class="card-media placeholder-media">
+        <span class="placeholder-label">封面图 / 截图</span>
+      </div>
+      <div class="card-body">
+        <h3>项目名称四</h3>
+        <p>简短描述。可添加 GitHub / Demo 链接。</p>
+        <div class="card-tags"><span>JavaScript</span><span>Tool</span></div>
+      </div>
+    </article>
+
+  </div>
+  <p class="work-hint">提示：复制 <code>.card</code> 区块即可添加更多作品，修改 <code>data-category</code> 控制筛选分类。</p>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="section skills" id="skills">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2>技能</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>视觉 / 创作工具</h4>
+      <ul><li>TouchDesigner</li><li>Blender</li><li>Ableton Live</li><li>Figma</li></ul>
+    </div>
+    <div class="skill-group">
+      <h4>开发</h4>
+      <ul><li>Python</li><li>JavaScript / HTML / CSS</li><li>Git</li><li>（按需增删）</li></ul>
+    </div>
+    <div class="skill-group">
+      <h4>其他</h4>
+      <ul><li>项目管理</li><li>跨学科协作</li><li>（按需增删）</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact" id="contact">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2>联系</h2>
+  </div>
+  <p class="contact-lead">对合作、展演或项目交流感兴趣？欢迎联系。</p>
+  <div class="contact-links">
+    <a href="mailto:hanzhe214@gmail.com" class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value">hanzhe214@gmail.com</span>
+    </a>
+    <a href="tel:+8613691638912" class="contact-item">
+      <span class="contact-label">Phone</span>
+      <span class="contact-value">+86 136 9163 8912</span>
+    </a>
+    <a href="https://github.com/yourhandle" target="_blank" rel="noopener" class="contact-item">
+      <span class="contact-label">GitHub</span>
+      <span class="contact-value">@yourhandle（待补充）</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> 钟涵哲 Gabrielle Zhong. Built with care.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
