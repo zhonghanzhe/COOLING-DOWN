@@ -226,6 +226,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 .card-body { padding: 1.3rem 1.4rem 1.6rem; }
 .card-body h3 { font-size: .92rem; font-weight: 500; }
+.card-body .card-label { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.card-label em { font-style: italic; font-weight: 300; }
+.card-date { color: var(--text-dim); }
 .card-body p { font-size: .85rem; margin-bottom: 1rem; }
 .card-tags {
   font-size: .72rem;
