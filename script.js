@@ -4,8 +4,13 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // ---- Masthead row background on scroll ----
 const nav = document.getElementById('nav');
 const backToTop = document.getElementById('backToTop');
+const solidZone = document.querySelector('.solid-zone');
 const onScroll = () => {
   nav.classList.toggle('scrolled', window.scrollY > 10);
+  // Homepage: name bar switches from white-on-video to normal once the solid zone reaches it
+  if (solidZone) {
+    nav.classList.toggle('on-solid', solidZone.getBoundingClientRect().top <= nav.offsetHeight);
+  }
   backToTop.hidden = window.scrollY < 400;
 };
 window.addEventListener('scroll', onScroll);
@@ -54,3 +59,10 @@ filterBar?.addEventListener('click', (e) => {
     card.classList.toggle('hidden', !match);
   });
 });
+
+// ---- Background video: respect reduced-motion ----
+const bgVideo = document.querySelector('.bg-video video');
+if (bgVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  bgVideo.removeAttribute('autoplay');
+  bgVideo.pause();
+}

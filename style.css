@@ -53,6 +53,71 @@ p { margin: 0 0 1em; color: var(--text-dim); }
 ul { padding: 0; margin: 0; list-style: none; }
 
 /* =========================================================
+   Homepage background video
+   The masthead + about sit over a fixed muted loop; from WORK down,
+   .solid-zone covers it with a gradient fade into the page background.
+   ========================================================= */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #000;
+}
+.bg-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bg-video::after {           /* darken for legible white text */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.25) 40%, rgba(0,0,0,.35));
+}
+body.has-bg-video { background: transparent; }
+html:has(body.has-bg-video) { background: var(--bg); }
+
+/* Over the video: swap tokens to white */
+.on-video {
+  --text:     #ffffff;
+  --text-dim: rgba(255,255,255,.78);
+  --border:   rgba(255,255,255,.32);
+  --bg:       transparent;
+  --bg-alt:   rgba(255,255,255,.08);
+  color: var(--text);
+}
+.on-video, .on-video p { text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+.about.on-video { min-height: 70vh; }
+
+.solid-zone {
+  position: relative;
+  background: var(--bg);
+  margin-top: 30vh;
+}
+.solid-zone::before {        /* fade from video to solid background */
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 100%;
+  height: 30vh;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+.solid-zone > .section:first-child { border-top: none; }
+
+/* Sticky name bar: transparent + white while over the video,
+   back to solid background + normal colours once WORK reaches it */
+.masthead.on-video .masthead-row { color: var(--text); transition: background-color .4s ease, color .4s ease, border-color .4s ease; }
+.masthead.on-video .masthead-row.on-solid {
+  --text:     #111110;
+  --text-dim: #6e6e68;
+  --border:   #d8d8d4;
+  --bg:       #f8f8f6;
+  text-shadow: none;
+}
+@media (prefers-color-scheme: dark) {
+  .masthead.on-video .masthead-row.on-solid {
+    --text: #f8f8f6; --text-dim: #a2a2a2; --border: #2b2b2b; --bg: #0a0a0a;
+  }
+}
+
+/* =========================================================
    Masthead (title + intro)
    ========================================================= */
 .masthead-tagline {

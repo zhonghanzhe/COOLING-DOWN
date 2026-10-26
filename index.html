@@ -10,10 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="has-bg-video">
+
+<!-- ===== BACKGROUND VIDEO (Temple Headquarter, muted loop) ===== -->
+<div class="bg-video" aria-hidden="true">
+  <video src="assets/projects/home-bg.mp4" poster="assets/projects/project1-poster.jpg"
+         autoplay muted loop playsinline preload="auto"></video>
+</div>
 
 <!-- ===== MASTHEAD ===== -->
-<header class="masthead" id="home">
+<header class="masthead on-video" id="home">
   <p class="masthead-tagline">
     Visual research across computation and image.<br>
     MA Computational Arts — Goldsmiths, University of London.
@@ -40,7 +46,7 @@
 </header>
 
 <!-- ===== ABOUT ===== -->
-<section class="section about" id="about">
+<section class="section about on-video" id="about">
   <div class="section-head">
     <span class="section-num">01</span>
     <h2>关于我</h2>
@@ -60,6 +66,9 @@
     </ul>
   </div>
 </section>
+
+<!-- ===== SOLID ZONE: work and below sit on a solid background ===== -->
+<div class="solid-zone">
 
 <!-- ===== WORK ===== -->
 <section class="section work" id="work">
@@ -89,19 +98,7 @@
       </a>
     </article>
 
-    <article class="card card-video place-right-md" data-category="practice">
-      <div class="card-media">
-        <video src="assets/projects/project1.mp4" poster="assets/projects/project1-poster.jpg"
-               controls playsinline preload="none"></video>
-      </div>
-      <div class="card-body">
-        <h3 class="card-label"><em>Temple Headquarter</em>, <span class="card-date">2026.3</span></h3>
-        <p class="card-title-zh">寺庙总部</p>
-        <p class="card-medium">Digital screen, gesture interaction</p>
-      </div>
-    </article>
-
-    <article class="card card-video place-left-sm" data-category="practice">
+    <article class="card card-video place-right-sm" data-category="practice">
       <div class="card-media">
         <video src="assets/projects/project2.mp4" poster="assets/projects/project2-poster.jpg"
                controls playsinline preload="none"></video>
@@ -112,7 +109,7 @@
       </div>
     </article>
 
-    <article class="card place-right-sm" data-category="work">
+    <article class="card place-left-sm" data-category="work">
       <a href="work/light-the-light.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work0-cover.jpg" alt="Light the Light 以光予光 主视觉" loading="lazy">
@@ -125,7 +122,7 @@
       </a>
     </article>
 
-    <article class="card place-left-sm" data-category="work">
+    <article class="card place-right-sm" data-category="work">
       <div class="card-media placeholder-media">
         <span class="placeholder-label">封面图 / 截图</span>
       </div>
@@ -182,6 +179,7 @@
 <footer class="footer">
   <p>&copy; <span id="year"></span> 钟涵哲 Gabrielle Zhong. Built with care.</p>
 </footer>
+</div>
 
 <a href="#home" class="back-to-top" id="backToTop" hidden>Back to top ↑</a>
 
