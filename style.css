@@ -331,6 +331,14 @@ ul { padding: 0; margin: 0; list-style: none; }
   gap: clamp(2rem, 5vw, 4rem);
 }
 .project-figure { margin: 0; }
+/* 图文错落：图片在右，文字在左并比图片顶部低一截 */
+.project-pair {
+  display: grid; grid-template-columns: 1fr 46%; gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.project-pair .pair-media { grid-column: 2; grid-row: 1; }
+.project-pair .pair-text { grid-column: 1; grid-row: 1; margin: clamp(6rem, 14vw, 12rem) 0 0; }
+.project-text .verse { padding-left: 2ch; }
 .project-figure img, .project-figure video { display: block; width: 100%; height: auto; }
 .project-figure.place-full     { width: 100%; }
 .project-figure.place-left-lg  { width: 60%; }
@@ -383,6 +391,8 @@ ul { padding: 0; margin: 0; list-style: none; }
    ========================================================= */
 @media (max-width: 860px) {
   .project-text.bilingual { grid-template-columns: 1fr; }
+  .project-pair { grid-template-columns: 1fr; }
+  .project-pair .pair-media, .project-pair .pair-text { grid-column: 1; grid-row: auto; margin-top: 0; }
   .project-text.bilingual { padding-bottom: 0; }
   .project-text.bilingual p:lang(zh-CN) { justify-self: end; width: 72%; margin-bottom: 0; }
   .about-grid { grid-template-columns: 1fr; }
