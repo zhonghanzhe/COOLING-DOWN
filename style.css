@@ -321,6 +321,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   align-items: end;
 }
 .project-text.bilingual p { max-width: 62ch; margin-top: 0; }
+/* 中文比英文低一截：底边超出英文底部 --drop，形成左右错落 */
+.project-text.bilingual { --drop: clamp(3rem, 7vw, 6rem); padding-bottom: var(--drop); }
+.project-text.bilingual p:lang(zh-CN) { margin-bottom: calc(-1 * var(--drop)); }
 .project-text p:lang(zh-CN) { line-height: 2; letter-spacing: .02em; }
 .project-media {
   display: flex;
@@ -380,7 +383,8 @@ ul { padding: 0; margin: 0; list-style: none; }
    ========================================================= */
 @media (max-width: 860px) {
   .project-text.bilingual { grid-template-columns: 1fr; }
-  .project-text.bilingual p:lang(zh-CN) { justify-self: end; width: 72%; }
+  .project-text.bilingual { padding-bottom: 0; }
+  .project-text.bilingual p:lang(zh-CN) { justify-self: end; width: 72%; margin-bottom: 0; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; border-top: none; }
   .skill-group { border-right: none; border-top: 1px solid var(--border); padding: 1.6rem 0; }
