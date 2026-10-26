@@ -156,7 +156,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
   display: flex;
   flex-direction: column;
   gap: .15rem;
-  font-size: .72rem;
+  font-size: .8rem;
   font-weight: 600;
   letter-spacing: .03em;
   color: var(--text-dim);
@@ -168,7 +168,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
   letter-spacing: .01em;
 }
 .wordmark-sub {
-  font-size: .72rem;
+  font-size: .8rem;
   text-transform: uppercase;
   letter-spacing: .05em;
   color: var(--text-dim);
