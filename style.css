@@ -270,7 +270,8 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .card.place-left-sm  { width: 40%; margin-left: 8%; }
 .card.place-right-sm { width: 36%; margin-left: auto; margin-right: 6%; }
 .card:hover { opacity: .82; }
-.card.card-video:hover { opacity: 1; }
+.card.card-video:hover, .card.card-static:hover { opacity: 1; }
+.card.place-full { width: 100%; }
 .card.hidden { display: none; }
 .card-link { display: block; }
 .card-media {
