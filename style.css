@@ -157,6 +157,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
   flex-direction: column;
   gap: .15rem;
   font-size: .72rem;
+  font-weight: 600;
   letter-spacing: .03em;
   color: var(--text-dim);
 }
