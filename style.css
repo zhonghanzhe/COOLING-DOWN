@@ -436,6 +436,8 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .pair-right { width: 56%; margin-left: auto; }
 .pair-left { width: 64%; }
 .pair-center { width: 76%; margin-inline: auto; }
+/* Black-line transparent logos: flip to white on the dark theme */
+@media (prefers-color-scheme: dark) { img.logo-ink { filter: invert(1); } }
 .pair-center.pair-wide { width: 100%; }
 .project-figure.invite-figure { width: 30%; margin-right: 6%; }
 .project-figure.long-figure { width: 28%; }
