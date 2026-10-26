@@ -337,7 +337,10 @@ ul { padding: 0; margin: 0; list-style: none; }
   align-items: start;
 }
 .project-pair .pair-media { grid-column: 2; grid-row: 1; }
-.project-pair .pair-text { grid-column: 1; grid-row: 1; margin: clamp(6rem, 14vw, 12rem) 0 0; }
+.project-pair .pair-text { grid-column: 1; grid-row: 1 / 3; margin: clamp(6rem, 14vw, 12rem) 0 0; }
+/* 中文译文在图片下方右栏，底边比英文低 --drop，与首段中英错落一致 */
+.project-pair:has(.pair-text-zh) { --drop: clamp(3rem, 7vw, 6rem); padding-bottom: var(--drop); }
+.project-pair .pair-text-zh { grid-column: 2; grid-row: 2; align-self: end; margin: 0 0 calc(-1 * var(--drop)); }
 .project-text .verse { padding-left: 2ch; }
 .project-figure img, .project-figure video { display: block; width: 100%; height: auto; }
 .project-figure.place-full     { width: 100%; }
@@ -392,7 +395,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 @media (max-width: 860px) {
   .project-text.bilingual { grid-template-columns: 1fr; }
   .project-pair { grid-template-columns: 1fr; }
-  .project-pair .pair-media, .project-pair .pair-text { grid-column: 1; grid-row: auto; margin-top: 0; }
+  .project-pair:has(.pair-text-zh) { padding-bottom: 0; }
+  .project-pair .pair-media, .project-pair .pair-text, .project-pair .pair-text-zh { grid-column: 1; grid-row: auto; margin-top: 0; }
+  .project-pair .pair-text-zh { margin-bottom: 0; justify-self: end; width: 72%; }
   .project-text.bilingual { padding-bottom: 0; }
   .project-text.bilingual p:lang(zh-CN) { justify-self: end; width: 72%; margin-bottom: 0; }
   .about-grid { grid-template-columns: 1fr; }
@@ -402,7 +407,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   .about-facts li { grid-template-columns: 1fr; gap: .4rem; }
 }
 @media (max-width: 640px) {
-  .project-text.bilingual p:lang(zh-CN) { width: 100%; }
+  .project-text.bilingual p:lang(zh-CN), .project-pair .pair-text-zh { width: 100%; }
   .masthead-row { gap: 1rem; }
   .bracket-nav { gap: 1.1rem; }
 }
