@@ -431,6 +431,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .hoarding-pair { display: grid; grid-template-columns: 1fr 34%; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
 .hoarding-pair .hoarding-photo { grid-column: 2; grid-row: 1; }
 .hoarding-pair .hoarding-stack-wrap { grid-column: 1; grid-row: 1; margin-top: clamp(5rem, 12vw, 11rem); }
+.project-figure > .project-caption { width: max-content; max-width: calc(100vw - 40px); }
 .project-caption { margin-top: .7rem; font-size: .78rem; color: var(--text-dim); }
 .project-figure img, .project-figure video { display: block; width: 100%; height: auto; }
 .project-figure.place-full     { width: 100%; }
