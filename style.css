@@ -211,6 +211,8 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 .card-media img, .card-media video { width: 100%; height: 100%; object-fit: cover; }
 .card-media video { object-fit: contain; background: #000; }
+.card-media.card-media-natural { aspect-ratio: auto; }
+.card-media-natural img { height: auto; }
 .placeholder-media {
   display: flex;
   align-items: center;
