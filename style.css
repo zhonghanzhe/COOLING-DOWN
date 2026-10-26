@@ -380,6 +380,7 @@ ul { padding: 0; margin: 0; list-style: none; }
    ========================================================= */
 @media (max-width: 860px) {
   .project-text.bilingual { grid-template-columns: 1fr; }
+  .project-text.bilingual p:lang(zh-CN) { justify-self: end; width: 72%; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; border-top: none; }
   .skill-group { border-right: none; border-top: 1px solid var(--border); padding: 1.6rem 0; }
@@ -387,6 +388,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   .about-facts li { grid-template-columns: 1fr; gap: .4rem; }
 }
 @media (max-width: 640px) {
+  .project-text.bilingual p:lang(zh-CN) { width: 100%; }
   .masthead-row { gap: 1rem; }
   .bracket-nav { gap: 1.1rem; }
 }
