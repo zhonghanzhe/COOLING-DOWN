@@ -351,6 +351,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .project-row-wrap { width: 62%; }
 .project-row { display: flex; gap: clamp(.75rem, 1.6vw, 1.25rem); align-items: flex-start; }
 .project-row .project-figure { flex: var(--ar, 1) 1 0; min-width: 0; }
+.project-stack { display: flex; flex-direction: column; gap: clamp(.75rem, 1.6vw, 1.25rem); }
 .project-caption { margin-top: .7rem; font-size: .78rem; color: var(--text-dim); }
 .project-figure img, .project-figure video { display: block; width: 100%; height: auto; }
 .project-figure.place-full     { width: 100%; }
