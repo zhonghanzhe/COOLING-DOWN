@@ -447,6 +447,8 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .project-figure.long-figure { width: 28%; }
 .project-caption { margin-top: .7rem; font-size: .78rem; color: var(--text-dim); }
 .project-figure img, .project-figure video { display: block; width: 100%; height: auto; }
+/* 网格对齐：同一排的图按 --ar 轻微裁切（object-fit: cover），让各排列宽一致、四角对齐 */
+.crop-grid .project-figure img { aspect-ratio: var(--ar); object-fit: cover; }
 .project-figure.place-full     { width: 100%; }
 .project-figure.place-left-lg  { width: 60%; }
 .project-figure.place-right-md { width: 46%; margin-left: auto; }
