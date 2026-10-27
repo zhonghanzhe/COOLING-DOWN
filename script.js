@@ -46,19 +46,30 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealTargets.forEach(el => revealObserver.observe(el));
 
 // ---- Work filter ----
+// Top row: Personal Practice / Work. Second row (only under Work): which client.
 const filterBar = document.getElementById('filterBar');
+const filterSub = document.getElementById('filterSub');
 const cards = document.querySelectorAll('.card');
-filterBar?.addEventListener('click', (e) => {
-  const btn = e.target.closest('.filter-btn');
-  if (!btn) return;
-  filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const filter = btn.dataset.filter;
+let currentFilter = 'practice';
+let currentClient = 'seaworld';
+const applyFilter = () => {
+  if (filterSub) filterSub.hidden = currentFilter !== 'work';
   cards.forEach(card => {
-    const match = filter === 'all' || card.dataset.category === filter;
+    const match = card.dataset.category === currentFilter &&
+      (currentFilter !== 'work' || card.dataset.client === currentClient);
     card.classList.toggle('hidden', !match);
   });
+};
+const pickTab = (bar, attr, set) => bar?.addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  set(btn.dataset[attr]);
+  applyFilter();
 });
+pickTab(filterBar, 'filter', v => { currentFilter = v; });
+pickTab(filterSub, 'client', v => { currentClient = v; });
 
 // ---- Background video: keep it playing ----
 // Muted + playsinline autoplays almost everywhere. Where autoplay is blocked

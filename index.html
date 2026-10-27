@@ -81,6 +81,12 @@
     <button class="filter-btn" data-filter="work">Work/工作作品</button>
   </div>
 
+  <!-- Work 二级标签：按甲方分组，只在 Work 选中时显示 -->
+  <div class="filter-bar filter-sub" id="filterSub" hidden>
+    <button class="filter-btn active" data-client="seaworld">Shenzhen Seaworld 深圳海上世界</button>
+    <button class="filter-btn" data-client="mixc">Shenzhen MixC World 深圳万象天地</button>
+  </div>
+
   <div class="grid" id="workGrid">
 
     <article class="card place-left-lg" data-category="practice">
@@ -117,7 +123,7 @@
       </div>
     </article>
 
-    <article class="card place-left-sm hidden" data-category="work">
+    <article class="card place-left-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/light-the-light.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work0-cover.jpg" alt="Light the Light 以光予光 主视觉" loading="lazy">
@@ -130,7 +136,7 @@
       </a>
     </article>
 
-    <article class="card place-right-sm hidden" data-category="work">
+    <article class="card place-right-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/seaview.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work8-cover.jpg" alt="Seaview 蛇口游逛手册" loading="lazy">
@@ -143,7 +149,7 @@
       </a>
     </article>
 
-    <article class="card place-left-sm hidden" data-category="work">
+    <article class="card place-left-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/flow-up.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work4-cover.jpg" alt="Flow Up 春日艺术企划" loading="lazy">
@@ -156,7 +162,7 @@
       </a>
     </article>
 
-    <article class="card place-right-md hidden" data-category="work">
+    <article class="card place-right-md hidden" data-category="work" data-client="seaworld">
       <a href="work/nanshan-hiking.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work6-cover.jpg" alt="大南山登山碰头点 在这儿碰头" loading="lazy">
@@ -169,7 +175,7 @@
       </a>
     </article>
 
-    <article class="card place-left-sm hidden" data-category="work">
+    <article class="card place-left-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/chinese-new-year.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work1-cover.jpg" alt="Chinese New Year Poster Design 春节海报" loading="lazy">
@@ -181,7 +187,7 @@
       </a>
     </article>
 
-    <article class="card card-static place-full hidden" data-category="work">
+    <article class="card card-static place-full hidden" data-category="work" data-client="seaworld">
       <div class="card-media card-media-natural">
         <div class="project-stack">
           <img src="assets/projects/work2-cover.jpg" alt="明华轮外圈围挡设计" loading="lazy">
@@ -195,7 +201,7 @@
       </div>
     </article>
 
-    <article class="card place-left-sm hidden" data-category="work">
+    <article class="card place-left-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/valentines-day.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work3-cover.png" alt="Valentine's Day Campaign Design 情人节系列设计" loading="lazy">
@@ -208,7 +214,7 @@
       </a>
     </article>
 
-    <article class="card card-static place-right-md hidden" data-category="work">
+    <article class="card card-static place-right-md hidden" data-category="work" data-client="seaworld">
       <div class="card-media card-media-natural">
         <div class="project-row">
           <figure class="project-figure" style="--ar: .75"><img class="logo-ink" src="assets/projects/work5-01.png" alt="SZSW 副标识 三种字形" loading="lazy"></figure>
@@ -221,7 +227,7 @@
       </div>
     </article>
 
-    <article class="card place-left-sm hidden" data-category="work">
+    <article class="card place-left-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/hihi-spring.html" class="card-link">
       <div class="card-media card-media-natural">
         <img src="assets/projects/work7-cover.jpg" alt="HiHi Spring 四月主视觉" loading="lazy">
@@ -233,7 +239,7 @@
       </a>
     </article>
 
-    <article class="card place-right-md hidden" data-category="work">
+    <article class="card place-right-md hidden" data-category="work" data-client="seaworld">
       <a href="work/paw-paw-island.html" class="card-link">
       <div class="card-media card-media-natural">
         <img class="logo-ink" src="assets/projects/work9-cover.png" alt="Paw Paw Island 浪花爪爪岛 标题字设计" loading="lazy">
@@ -247,7 +253,7 @@
       </a>
     </article>
 
-    <article class="card place-left-sm hidden" data-category="work">
+    <article class="card place-left-sm hidden" data-category="work" data-client="seaworld">
       <a href="work/merchandise.html" class="card-link">
       <div class="card-media card-media-natural">
         <img class="logo-ink" src="assets/projects/work10-cover.png" alt="Project Merchandise Design 周边设计 英文手写体标识" loading="lazy">
