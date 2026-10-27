@@ -267,6 +267,11 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .card.place-right-md { width: 54%; margin-left: auto; }     /* right, smaller */
 .card.place-left-sm  { width: 40%; margin-left: 8%; }
 .card.place-right-sm { width: 36%; margin-left: auto; margin-right: 6%; }
+/* 竖版海报卡片：共用一个海报宽度 --p，让不同卡片里的 9:16 海报大小完全一致 */
+.card.poster-card { --p: 28%; --g: clamp(.75rem, 1.6vw, 1.25rem); width: var(--p); }
+.card.poster-pair { width: calc(2 * var(--p) + var(--g)); }
+.card.poster-pair-wide { width: calc(var(--p) * (1 + .7331 / .5625) + var(--g)); } /* 9:16 + .7331 比例 POP 立牌 */
+.card.poster-right { margin-left: auto; }
 .card:hover { opacity: .82; }
 .card.card-video:hover, .card.card-static:hover { opacity: 1; }
 .card.place-full { width: 100%; }
@@ -521,6 +526,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
   .skills-grid { grid-template-columns: 1fr; border-top: none; }
   .skill-group { border-right: none; border-top: 1px solid var(--border); padding: 1.6rem 0; }
   .card[class*="place-"], .project-figure[class*="place-"] { width: 100%; margin-left: 0; margin-right: 0; }
+  .card.poster-card { --p: 44%; }
   .about-facts li { grid-template-columns: 1fr; gap: .4rem; }
 }
 @media (max-width: 640px) {
