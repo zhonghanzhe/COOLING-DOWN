@@ -276,6 +276,8 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .poster-grid { --g: clamp(.75rem, 1.6vw, 1.25rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--g); }
 .poster-grid + .poster-grid { margin-top: var(--g); }
 .poster-grid-3 { width: calc(75% - var(--g) / 4); margin-inline: auto; grid-template-columns: repeat(3, 1fr); }
+/* zine 网格：一行三个，间距比默认小 */
+.zine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.35rem, .7vw, .6rem); }
 .card:hover { opacity: .82; }
 .card.card-video:hover, .card.card-static:hover { opacity: 1; }
 .card.place-full { width: 100%; }
