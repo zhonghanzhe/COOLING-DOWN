@@ -272,6 +272,10 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .card.poster-pair { width: calc(2 * var(--p) + var(--g)); }
 .card.poster-pair-wide { width: calc(var(--p) * (1 + .7331 / .5625) + var(--g)); } /* 9:16 + .7331 比例 POP 立牌 */
 .card.poster-right { margin-left: auto; }
+/* 海报网格：每排 4 等分；3 张的一排同列宽、整体居中 */
+.poster-grid { --g: clamp(.75rem, 1.6vw, 1.25rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--g); }
+.poster-grid + .poster-grid { margin-top: var(--g); }
+.poster-grid-3 { width: calc(75% - var(--g) / 4); margin-inline: auto; grid-template-columns: repeat(3, 1fr); }
 .card:hover { opacity: .82; }
 .card.card-video:hover, .card.card-static:hover { opacity: 1; }
 .card.place-full { width: 100%; }
