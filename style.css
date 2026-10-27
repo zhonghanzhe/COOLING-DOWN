@@ -398,6 +398,11 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .project-text.bilingual { --drop: clamp(3rem, 7vw, 6rem); padding-bottom: var(--drop); }
 .project-text.bilingual p:lang(zh-CN) { margin-bottom: calc(-1 * var(--drop)); }
 .project-text p:lang(zh-CN) { line-height: 2; letter-spacing: .02em; }
+/* 多段落双语：每种语言包在一个 div 里，错落落在 div 上而不是每段 */
+.project-text.bilingual > div:lang(zh-CN) { margin-bottom: calc(-1 * var(--drop)); }
+.project-text.bilingual > div p:lang(zh-CN) { margin-bottom: 0; }
+.project-text.bilingual > div p { margin-bottom: 0; }
+.project-text.bilingual > div p + p { margin-top: 1em; }
 .project-media {
   display: flex;
   flex-direction: column;
@@ -506,6 +511,8 @@ html:has(body.has-bg-video) { background: var(--bg); }
   .project-pair .pair-text-zh { margin-bottom: 0; justify-self: end; width: 72%; }
   .project-text.bilingual { padding-bottom: 0; }
   .project-text.bilingual p:lang(zh-CN) { justify-self: end; width: 72%; margin-bottom: 0; }
+  .project-text.bilingual > div:lang(zh-CN) { justify-self: end; width: 72%; margin-bottom: 0; }
+  .project-text.bilingual > div p:lang(zh-CN) { width: 100%; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; border-top: none; }
   .skill-group { border-right: none; border-top: 1px solid var(--border); padding: 1.6rem 0; }
@@ -514,6 +521,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
 }
 @media (max-width: 640px) {
   .project-text.bilingual p:lang(zh-CN), .project-pair .pair-text-zh { width: 100%; }
+  .project-text.bilingual > div:lang(zh-CN) { width: 100%; }
   .masthead-row { gap: 1rem; }
   .bracket-nav { gap: 1.1rem; }
 }
