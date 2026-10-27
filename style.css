@@ -255,10 +255,6 @@ html:has(body.has-bg-video) { background: var(--bg); }
 }
 .filter-btn:hover { color: var(--text); }
 .filter-btn.active { color: var(--text); border-bottom-color: var(--text); }
-/* Work 二级标签：紧贴在主标签下，字小一号 */
-.filter-sub { margin-top: -1.4rem; }
-.filter-sub .filter-btn { font-size: .72rem; }
-.filter-sub[hidden] { display: none; }
 
 /* Scattered gallery layout: one card per row, each picks its own width + side */
 .grid {

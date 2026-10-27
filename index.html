@@ -78,13 +78,9 @@
 
   <div class="filter-bar" id="filterBar">
     <button class="filter-btn active" data-filter="practice">Personal Practice/个人实践</button>
-    <button class="filter-btn" data-filter="work">Work/工作作品</button>
-  </div>
-
-  <!-- Work 二级标签：按甲方分组，只在 Work 选中时显示 -->
-  <div class="filter-bar filter-sub" id="filterSub" hidden>
-    <button class="filter-btn active" data-client="seaworld">Shenzhen Seaworld 深圳海上世界</button>
-    <button class="filter-btn" data-client="mixc">Shenzhen MixC World 深圳万象天地</button>
+    <!-- 工作经验按甲方分成两个标签 -->
+    <button class="filter-btn" data-filter="work" data-client="seaworld">Work/工作经验 · Shenzhen Seaworld 深圳海上世界</button>
+    <button class="filter-btn" data-filter="work" data-client="mixc">Work/工作经验 · Shenzhen MixC World 深圳万象天地</button>
   </div>
 
   <div class="grid" id="workGrid">
