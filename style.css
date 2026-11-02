@@ -243,7 +243,7 @@ html:has(body.has-bg-video) { background: var(--bg); }
 /* Lab */
 .lab-cover { width: 72%; transition: opacity .2s ease; }
 .lab-cover:hover { opacity: .82; }
-.lab-cover img { width: 100%; height: auto; display: block; }
+.lab-cover img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
 .lab-title { margin-bottom: 2.4rem; }
 .lab-open {
   display: inline-block;
