@@ -240,6 +240,23 @@ html:has(body.has-bg-video) { background: var(--bg); }
 }
 .about-facts span { font-size: .88rem; line-height: 1.7; }
 
+/* Lab */
+.lab-cover { width: 72%; transition: opacity .2s ease; }
+.lab-cover:hover { opacity: .82; }
+.lab-cover img { width: 100%; height: auto; display: block; }
+.lab-title { margin-bottom: 2.4rem; }
+.lab-open {
+  display: inline-block;
+  font-size: .85rem;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: .15em;
+  transition: opacity .2s ease;
+}
+.lab-open:hover { opacity: .6; }
+@media (max-width: 860px) {
+  .lab-cover { width: 100%; }
+}
+
 /* Work / filter */
 .filter-bar { display: flex; gap: 1.6rem; margin-bottom: 2.4rem; flex-wrap: wrap; }
 .filter-btn {
