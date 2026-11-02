@@ -432,6 +432,9 @@ html:has(body.has-bg-video) { background: var(--bg); }
 .project-text.bilingual > div p:lang(zh-CN) { margin-bottom: 0; }
 .project-text.bilingual > div p { margin-bottom: 0; }
 .project-text.bilingual > div p + p { margin-top: 1em; }
+/* 中英同排、顶部对齐，不错落 */
+.project-text.bilingual.level { align-items: start; padding-bottom: 0; margin-bottom: 0; }
+.project-text.bilingual.level p:lang(zh-CN) { margin-bottom: 0; justify-self: stretch; width: auto; }
 .project-media {
   display: flex;
   flex-direction: column;
