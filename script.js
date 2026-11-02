@@ -61,22 +61,21 @@ filterBar?.addEventListener('click', (e) => {
   });
 });
 
-// ---- Background video: keep it playing ----
+// ---- Background + card videos: keep them playing ----
 // Muted + playsinline autoplays almost everywhere. Where autoplay is blocked
 // (iOS Low Power Mode, data saver), start on the first touch/scroll/click,
 // and resume whenever the tab becomes visible again.
-const bgVideo = document.querySelector('.bg-video video');
-if (bgVideo) {
-  bgVideo.muted = true;
-  const tryPlay = () => { if (bgVideo.paused) bgVideo.play().catch(() => {}); };
+document.querySelectorAll('.bg-video video, .card video[autoplay]').forEach(video => {
+  video.muted = true;
+  const tryPlay = () => { if (video.paused) video.play().catch(() => {}); };
   tryPlay();
-  bgVideo.addEventListener('canplay', tryPlay);
+  video.addEventListener('canplay', tryPlay);
   ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach(evt =>
     window.addEventListener(evt, tryPlay, { passive: true }));
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) tryPlay();
   });
-}
+});
 
 // ---- Lightbox: click an image to view it large, arrows step through the project ----
 // Project pages: every image in .project-media is one set.
